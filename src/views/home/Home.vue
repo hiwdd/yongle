@@ -9,7 +9,8 @@
       </router-link>
       <div class="search">
         <input type="text"
-               placeholder="搜索" />
+               placeholder="搜索"
+               @click="$router.push('/search')" />
         <i class="iconfont icon-sousuo"></i>
       </div>
     </div>
@@ -58,31 +59,22 @@
     <!--图片-->
     <div class="home-img">
       <div class="first-pay-first">
-        <a>
-          <img src="//static.228.cn/upload/2019/06/21/1561085435056_e4a0_m1.jpg"
-               onerror="this.src=&quot;//static.228.cn/resources/images/lazy_default.gif&quot;"
+        <a v-for="item in blockRec"
+           :key="item.LINKID">
+          <img :src="item.IMG | toimg('//static.228.cn')"
                height="150"
                style="background: rgba(243, 187, 2, 0.3);" />
-          <i class="tit"
-             style="display:none;">先付先抢</i>
         </a>
       </div>
       <div class="special">
         <ul>
           <li>
-            <a href="/subject/mb/xuwei0124"
-               class
+            <a href="#"
+               v-for="item in subjectList"
+               :key="item.LINKID"
                style="height: 67.7914px;">
-              <img src="//static.228.cn/upload/2019/05/14/1557825914292_z7f9.jpg"
-                   onerror="this.src=&quot;//static.228.cn/resources/images/lazy_default.gif&quot;"
+              <img :src="item.IMG | toimg('//static.228.cn')"
                    style="background: rgba(42, 164, 4, 0.3);" />
-            </a>
-            <a href="/subject/mb/xuwei0124"
-               class
-               style="height: 67.7914px;">
-              <img src="//static.228.cn/upload/2019/05/14/1557825914294_q7j5.jpg"
-                   onerror="this.src=&quot;//static.228.cn/resources/images/lazy_default.gif&quot;"
-                   style="background: rgba(181, 166, 2, 0.3);" />
             </a>
           </li>
         </ul>
@@ -94,102 +86,18 @@
         <b class="active">推荐</b>
         <b class>场馆</b>
       </h3>
-      <ul class="recommend cl"
-          style="display:none">
-        <li>
-          <a href="/ticket-588253581.html"
-             class>
-            <img src="//static.228.cn/upload/2019/06/25/AfterTreatment/1561453756530_o7p3-0.jpg"
-                 class="imgs"
-                 style="background: rgba(143, 243, 2, 0.3);" />
-            <i class="tip gradual-red"
-               style>选座</i>
-            <b class="db mt5 name">CJAK Fanmeeting-成都站</b>
-            <span class="gray9 db f11">2019.07.14</span>
-            <span class="gray5 db f10">
-              <b class="red mr5 f13">¥ 380</b>起
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="/ticket-586184407.html"
-             class>
-            <img src="//static.228.cn/upload/2019/06/20/AfterTreatment/1561013110477_n6c9-0.jpg"
-                 class="imgs"
-                 style="background: rgba(11, 123, 4, 0.3);" />
-            <b class="db mt5 name">2019国际冠军杯上海站由友邦保险呈现</b>
-            <span class="gray9 db f11">2019.07.25</span>
-            <span class="gray5 db f10">
-              <b class="red mr5 f13">¥ 499</b>起
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="/ticket-588253581.html"
-             class>
-            <img src="//static.228.cn/upload/2019/06/25/AfterTreatment/1561453756530_o7p3-0.jpg"
-                 class="imgs"
-                 style="background: rgba(143, 243, 2, 0.3);" />
-            <i class="tip gradual-red"
-               style>选座</i>
-            <b class="db mt5 name">CJAK Fanmeeting-成都站</b>
-            <span class="gray9 db f11">2019.07.14</span>
-            <span class="gray5 db f10">
-              <b class="red mr5 f13">¥ 380</b>起
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="/ticket-586184407.html"
-             class>
-            <img src="//static.228.cn/upload/2019/06/20/AfterTreatment/1561013110477_n6c9-0.jpg"
-                 class="imgs"
-                 style="background: rgba(11, 123, 4, 0.3);" />
-            <b class="db mt5 name">2019国际冠军杯上海站由友邦保险呈现</b>
-            <span class="gray9 db f11">2019.07.25</span>
-            <span class="gray5 db f10">
-              <b class="red mr5 f13">¥ 499</b>起
-            </span>
-          </a>
-        </li>
-      </ul>
       <ul class="venue cl">
-        <li>
-          <a href="/venue-143639.html"
-             class>
-            <img src="//static.228.cn/upload/2014/10/22/AfterTreatment/1413979266764_h4e0-0.jpg"
+        <li v-for="item in recommendPage"
+            :key="item.LINKID">
+          <a href="#">
+            <img :src="item.PBIGIMG | toimg('//static.228.cn')"
                  class="imgs"
                  style="background: rgba(7, 17, 9, 0.3);" />
-            <i class="tip tip-totalTicket"
-               style="display: none;"></i>
-            <b class="db mt5 name">工人体育馆</b>
-            <span class="gray9 venue-address db f11">朝阳区三里屯工体北路</span>
+            <b class="db mt5 name">{{item.NAME}}</b>
+            <span class="gray9 venue-address db f11">{{item.VNAME}}</span>
           </a>
         </li>
-        <li>
-          <a href="/venue-143639.html"
-             class>
-            <img src="//static.228.cn/upload/2014/10/22/AfterTreatment/1413979266764_h4e0-0.jpg"
-                 class="imgs"
-                 style="background: rgba(7, 17, 9, 0.3);" />
-            <i class="tip tip-totalTicket"
-               style="display: none;"></i>
-            <b class="db mt5 name">工人体育馆</b>
-            <span class="gray9 venue-address db f11">朝阳区三里屯工体北路</span>
-          </a>
-        </li>
-        <li>
-          <a href="/venue-143639.html"
-             class>
-            <img src="//static.228.cn/upload/2014/10/22/AfterTreatment/1413979266764_h4e0-0.jpg"
-                 class="imgs"
-                 style="background: rgba(7, 17, 9, 0.3);" />
-            <i class="tip tip-totalTicket"
-               style="display: none;"></i>
-            <b class="db mt5 name">工人体育馆</b>
-            <span class="gray9 venue-address db f11">朝阳区三里屯工体北路</span>
-          </a>
-        </li>
+        <div style="clear:both;"></div>
       </ul>
     </div>
     <Footers></Footers>
