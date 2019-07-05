@@ -12,15 +12,15 @@
         <form id="from">
           <div class="form">
             <label>
-              <input type="text" name="username" class="username inp" placeholder="手机号 / 邮箱地址">
+              <input type="text" name="username" class="username inp" placeholder="手机号 / 邮箱地址" />
             </label>
             <label>
-              <input type="password" name="password" class="password inp" placeholder="请输入密码">
+              <input type="password" name="password" class="password inp" placeholder="请输入密码" />
             </label>
           </div>
           <div class="exempt">
             <label class="fl">
-              <input name="freeloginbtn" type="checkbox" class="check">
+              <input name="freeloginbtn" type="checkbox" class="check" />
               <span>两周内免登录</span>
             </label>
             <a href="javascript:;" class="fr">忘记密码</a>
@@ -101,6 +101,7 @@ export default {
 }
 
 #layout .login .inp {
+  font-size: 0.3rem;
   width: 100%;
   height: 0.92rem;
   border: 1px solid #dedfe0;
@@ -174,7 +175,7 @@ export default {
 }
 
 #layout .login .foot .go-register {
-  font-size: 0.24rem;
+  font-size: 0.3rem;
   margin-bottom: 0.8rem;
   display: block;
 }
@@ -186,12 +187,12 @@ export default {
 
 #layout .login .foot p {
   color: rgba(255, 255, 255, 0.4);
-  font-size: 0.11rem;
+  font-size: 0.25rem;
 }
 
 #layout .login .foot p a {
   color: rgba(255, 58, 86, 0.6);
-  font-size: 0.11rem;
+  font-size: 0.25rem;
 }
 
 #layout .login .foot a {

@@ -12,13 +12,13 @@
         <form id="from">
           <div class="form">
             <label class="lab">
-              <input type="text" name="username" class="username inp" placeholder="请输入手机号">
+              <input type="text" name="username" class="username inp" placeholder="请输入手机号" />
             </label>
             <label class="lab">
-              <input type="password" name="password" class="password inp" placeholder="请输入密码">
+              <input type="password" name="password" class="password inp" placeholder="请输入密码" />
             </label>
             <label class="lab">
-              <input type="number" name="vercode" class="vercode inp" placeholder="请输入验证码">
+              <input type="number" name="vercode" class="vercode inp" placeholder="请输入验证码" />
               <a href="javascript:;" class="red">获取验证码</a>
             </label>
           </div>
@@ -86,6 +86,7 @@ export default {};
 }
 
 #layout .login .inp {
+  font-size: 0.3rem;
   height: 0.92rem;
   outline: none;
   color: #fff;
@@ -102,7 +103,7 @@ export default {};
 
 #layout .login .lab a {
   color: #ff3a56;
-  font-size: 0.26rem;
+  font-size: 0.2rem;
 }
 
 #layout .login .lab {
@@ -134,7 +135,7 @@ export default {};
 }
 
 #layout .login .foot .go-register {
-  font-size: 0.24rem;
+  font-size: 0.3rem;
   margin-bottom: 0.8rem;
   display: block;
 }
@@ -146,12 +147,12 @@ export default {};
 
 #layout .login .foot p {
   color: rgba(255, 255, 255, 0.4);
-  font-size: 0.11rem;
+  font-size: 0.25rem;
 }
 
 #layout .login .foot p a {
   color: rgba(255, 58, 86, 0.6);
-  font-size: 0.11rem;
+  font-size: 0.25rem;
 }
 
 #layout .login .foot a {
